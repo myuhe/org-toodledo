@@ -2624,7 +2624,7 @@ lists."
   "Run only simulated org-toodledo tests."
   (interactive)
   (condition-case nil
-      (require 'org-toodledo-test)
+      (load-file "test/org-toodledo-test.el")
     (error (error "The file `org-toodledo-test` not available, download directly from source")))
   (org-toodledo-test 'sim))
 
@@ -2632,7 +2632,7 @@ lists."
   "Run org-toodledo-test suite."
   (interactive)
   (condition-case nil
-      (require 'org-toodledo-test)
+      (load-file "test/org-toodledo-test.el")
     (error (error "The file `org-toodledo-test` not available, download directly from source")))
   (when (y-or-n-p "Switch to test account and run org-toodledo tests? ")
     (let ((old-userid org-toodledo-userid)
